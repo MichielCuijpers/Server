@@ -12,27 +12,31 @@ For **MySQL 8** read [this](#MySQL-Server-specific-configuration-for-version-8).
 
 ### Configure the database connection
 
-Default configuration is available. **DO NOT UPDATE `.env.default`**
-If you need to specify different configuration, add .env file in project root folder and set values for MYSQL_DATABASE, MYSQL_ROOT_PASSWORD, DATABASE_HOST.
+Example default configuration is available in `.env.default`.
+
+To specify configuration, copy `.env.default` to a `.env` file in project root folder and set/adjust values for MYSQL_DATABASE & TYPEORM_DATABASE, MYSQL_ROOT_PASSWORD & TYPEORM_PASSWORD, DATABASE_HOST & TYPEORM_HOST as required.
 
 Example:
 
 ```bash
+TYPEORM_HOST=localhost
+TYPEORM_PASSWORD=toor
+TYPEORM_DATABASE=cherrytwist
 DATABASE_HOST=localhost
 MYSQL_DATABASE=cherrytwist
 MYSQL_ROOT_PASSWORD=toor
 ```
 
-Optional variables:
+Other variables:
 
-- `MYSQL_DB_PORT` - specifies the MySQL port by default 3306.
-- `ENABLE_ORM_LOGGING` -Enable/disable the internal ORM logging .
+- `TYPEORM_PORT` - specifies the MySQL port by default 3306.
+- `TYPEORM_LOGGING` -Enable/disable the internal ORM logging `{true,false}`
 
 Example:
 
 ```
-MYSQL_DB_PORT=55000
-ENABLE_ORM_LOGGING=true
+TYPEORM_PORT=55000
+TYPEORM_LOGGING=true
 ```
 
 ### Install dependencies
